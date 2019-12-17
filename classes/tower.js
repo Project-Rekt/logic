@@ -7,3 +7,15 @@ class tower {
         this.targetingMode = targetingMode;
     }
 }
+
+tower.takeDamage = function(damage) {
+    this.hp -= damage;
+}
+
+tower.healDamage = function(heal) {
+    this.hp += heal;
+}
+
+tower.changeMode = function(targetingMode) {
+    this.targetingMode = targetingMode;
+}

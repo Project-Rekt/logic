@@ -1,3 +1,0 @@
-function target(entites, targetingMode) {
-
-}
