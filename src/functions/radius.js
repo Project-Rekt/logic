@@ -17,3 +17,5 @@ function radius(entities, tower) {
 
     return array;
 }
+
+export { radius };
