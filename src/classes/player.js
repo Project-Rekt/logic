@@ -4,11 +4,6 @@ class player {
         this.currency = currency;
     }
 
-    //Function to return currency.
-    getCurrency() {
-        return this.currency;
-    }
-
     //Function to add money.
     gainMoney(money) {
         this.currency += money;
