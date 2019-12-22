@@ -39,3 +39,5 @@ function target(entities, targetingMode) {
 
     return target;
 }
+
+export { target };
