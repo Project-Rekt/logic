@@ -4,6 +4,7 @@ function target(entities, targetingMode) {
     let target = entities[0];
 
     switch (targetingMode) {
+        //Target monster with the lowest HP.
         case "lowestHP":
             entities.forEach(element => {
                 if (element.hp < target.hp) {
@@ -11,7 +12,8 @@ function target(entities, targetingMode) {
                 }
             });
             break;
-
+        
+        //Target monster with the highest HP.
         case "highestHP":
             entities.forEach(element => {
                 if (element.hp > target.hp) {
@@ -19,7 +21,8 @@ function target(entities, targetingMode) {
                 }
             });
             break;
-
+        
+        //Target monster nearest to the end point.
         case "nearest":
             entities.forEach(element => {
                 if (element.distance < target.distance) {
@@ -27,7 +30,8 @@ function target(entities, targetingMode) {
                 }
             });
             break;
-
+        
+        //Target monster furthest to the end point.
         case "furthest":
             entities.forEach(element => {
                 if (element.distance > target.distance) {
