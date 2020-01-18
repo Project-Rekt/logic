@@ -4,3 +4,5 @@ require('babel-register')({
 });
 
 module.exports = require('./test.js')
+module.exports = require('./patherTests.js')
+module.exports = require('./mobSpawnerTests.js')
