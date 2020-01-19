@@ -44,7 +44,7 @@ class PathTester{
         results.push(this.pathTest1())
         results.push(this.pathTest2())
         results.push(this.pathTest3())
-        var failed = false
+        let failed = false
         for(let i = 0; i < results.length; i++)
         {
             if(!results[i]){
