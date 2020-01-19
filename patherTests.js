@@ -20,12 +20,7 @@ class PathTester{
     }
 
     selfVerifyTest(){
-        let results = []
-        results.push(this.verifyTest1())
-        results.push(this.verifyTest2())
-        results.push(this.verifyTest3())
-        results.push(this.verifyTest4())
-        results.push(this.verifyTest5())
+        let results = [this.verifyTest1(), this.verifyTest2(), this.verifyTest3(), this.verifyTest4(), this.verifyTest5()]
         let failed = false
         for(let i = 0; i < results.length; i++)
         {
@@ -40,10 +35,7 @@ class PathTester{
     }
 
     pathTest(){
-        let results = []
-        results.push(this.pathTest1())
-        results.push(this.pathTest2())
-        results.push(this.pathTest3())
+        let results = [this.pathTest1(), this.pathTest2(), this.pathTest3()]
         let failed = false
         for(let i = 0; i < results.length; i++)
         {
