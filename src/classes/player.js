@@ -13,6 +13,10 @@ class Player {
     spendMoney(money) {
         this.currency -= money;
     }
+
+    getMoney(){
+        return this.currency
+    }
 }
 
 export { Player };

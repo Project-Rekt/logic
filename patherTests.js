@@ -3,6 +3,7 @@
  * tests Pathing module and prints out results of tests
  */
 import { Pather } from './src/classes/pather'; 
+
 class PathTester{
     constructor(){
     }
@@ -77,7 +78,7 @@ class PathTester{
     verifyTest5(){
         let a = [[0, 1], [2, 3], [4, 5]]
         let b = [[0, 1], [2, 3], [4, 5]]
-        letlet result = this.pathsEqual(a, b)
+        let result = this.pathsEqual(a, b)
         return result
     }
 

@@ -28,6 +28,22 @@ class Monster {
     updateDistance(distance) {
         this.distance = distance;
     }
+
+    getHp(){
+        return this.hp
+    }
+    getSpeed(){
+        return this.speed
+    }
+    getDef(){
+        return this.def
+    }
+    getDistance(){
+        return this.distance
+    }
+    getPosition(){
+        return [this.positionX, this.positionY]
+    }
 }
 
 export { Monster };

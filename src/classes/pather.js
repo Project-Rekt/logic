@@ -25,7 +25,7 @@
         let start = [0, 0]
         let expected = [[0, 0],[1, 0]]
         p.initializeGraph(matrix)
-        var path = p.findShortestPathToEnds(start[0], start[1])
+        let path = p.findShortestPathToEnds(start[0], start[1])
  */
 class Pather{
     constructor(){
