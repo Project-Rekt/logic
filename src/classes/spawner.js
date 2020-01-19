@@ -20,7 +20,7 @@ class Spawner{
     spawnMobs(deltaTime){
         this.startTime += deltaTime
         while (this.mobs.length > 0 && this.mobs[0][0] <= this.startTime){
-            var toSpawn = this.mobs.shift()[1]
+            let toSpawn = this.mobs.shift()[1]
             this.spawn(toSpawn)
         }
     }
