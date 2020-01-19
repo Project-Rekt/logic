@@ -9,7 +9,7 @@ class SpawnerTester {
     }
 
     spawnerTest(){
-        var results = []
+let results = []
         results.push(this.spawnerTest1())
         results.push(this.spawnerTest2())
         results.push(this.spawnerTest3())
