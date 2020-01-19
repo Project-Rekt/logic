@@ -17,7 +17,7 @@ let results = []
         results.push(this.spawnerTest5())
         results.push(this.spawnerTest6())
         let failed = false
-        for(var i = 0; i < results.length; i++)
+        for(let i = 0; i < results.length; i++)
         {
             if(!results[i]){
                 failed = true
