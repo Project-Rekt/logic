@@ -1,5 +1,5 @@
 //Class and Constructor to initiate tower object.
-class tower {
+class Tower {
     constructor(hp, atkspeed, atk, def, targetingMode, range, x, y) {
         this.hp = hp;
         this.atkspeed = atkspeed;
@@ -32,4 +32,4 @@ class tower {
     }
 }
 
-export { tower };
+export { Tower };

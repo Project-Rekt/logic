@@ -1,5 +1,5 @@
 //Class and Constructor to initiate player object.
-class player {
+class Player {
     constructor(currency) {
         this.currency = currency;
     }
@@ -15,4 +15,4 @@ class player {
     }
 }
 
-export { player };
+export { Player };
