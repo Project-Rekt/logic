@@ -9,13 +9,7 @@ class SpawnerTester {
     }
 
     spawnerTest(){
-let results = []
-        results.push(this.spawnerTest1())
-        results.push(this.spawnerTest2())
-        results.push(this.spawnerTest3())
-        results.push(this.spawnerTest4())
-        results.push(this.spawnerTest5())
-        results.push(this.spawnerTest6())
+let results = [this.spawnerTest1(), this.spawnerTest2(), this.spawnerTest3(), this.spawnerTest4(), this.spawnerTest5(), this.spawnerTest6()]
         let failed = false
         for(let i = 0; i < results.length; i++)
         {
