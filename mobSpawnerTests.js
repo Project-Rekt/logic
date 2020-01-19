@@ -3,7 +3,7 @@
  */
 
 import { Spawner } from './src/classes/spawner';
-class spawnerTester{
+class SpawnerTester {
     constructor(){
 
     }
