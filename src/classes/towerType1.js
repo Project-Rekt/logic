@@ -1,4 +1,4 @@
-import tower from './tower';
+import { tower } from './tower';
 
 class towerType1 extends tower {
     constructor(x, y) {
