@@ -17,13 +17,13 @@
  * call findShortestPathToEnds(xStart, yStart) to generate a new list of lists representation of the coordinates traversed 
  * 
  * example usage:
-   var p = new Pather()
-   var matrix = [
+   let p = new Pather()
+   let matrix = [
             [0, 1],
             [2, 2]
         ]
-        var start = [0, 0]
-        var expected = [[0, 0],[1, 0]]
+        let start = [0, 0]
+        let expected = [[0, 0],[1, 0]]
         p.initializeGraph(matrix)
         var path = p.findShortestPathToEnds(start[0], start[1])
  */
@@ -47,20 +47,20 @@ class Pather{
      * converts a matrix into a graph/node representation
      */
     matrixToGraph(matrix){
-        var g = new Graph()
-        var nodeMatrix = new Array(matrix.length)
-        for (var i = 0; i < matrix.length; i++)
+        let g = new Graph()
+        let nodeMatrix = new Array(matrix.length)
+        for (let i = 0; i < matrix.length; i++)
         {
             nodeMatrix[i] = new Array(matrix[0].length)
         }
-        for (var i = 0; i < matrix.length; i++)
+        for (let i = 0; i < matrix.length; i++)
         {
-            for (var j = 0; j < matrix[0].length; j++)
+            for (let j = 0; j < matrix[0].length; j++)
             {
-                var val = matrix[i][j]
+                let val = matrix[i][j]
                 if (val == 0 || val == 2)
                 {
-                    var n = new PathNode(j, i, val)
+                    let n = new PathNode(j, i, val)
                     g.addNode(n)
                     nodeMatrix[i][j] = n
                 }
@@ -77,11 +77,11 @@ class Pather{
      * connects up, down, left, right to the center node.
      */
     connectAdjacents(nodeMatrix){
-        for (var i = 0; i < nodeMatrix.length; i++)
+        for (let i = 0; i < nodeMatrix.length; i++)
         {
-            for(var j = 0; j < nodeMatrix[0].length; j++)
+            for(let j = 0; j < nodeMatrix[0].length; j++)
             {
-                var n = nodeMatrix[i][j]
+                let n = nodeMatrix[i][j]
                 if(nodeMatrix[i][j] === undefined){
                     continue;
                 }
@@ -123,12 +123,12 @@ class Pather{
      */
     findShortestPathToEnds(xStart, yStart){
         this.graph.wipeAllPathData()
-        var startNode = this.graph.getNode(xStart, yStart)
+        let startNode = this.graph.getNode(xStart, yStart)
         this.findShortestPaths(startNode)
-        var shortest = this.searchShortestPathToEnds()
-        var shortestpath = shortest.shortestPath
+        let shortest = this.searchShortestPathToEnds()
+        let shortestpath = shortest.shortestPath
         shortestpath.push(shortest)
-        var result = this.convertPathToListOfLists(shortestpath)
+        let result = this.convertPathToListOfLists(shortestpath)
         return result
     }
     
@@ -137,10 +137,10 @@ class Pather{
      * searches among the nodes for the endpoint nodes, from there, find the endpoint with the shortest path and return path, null if none are found
      */
     searchShortestPathToEnds(){
-        var shortest = null;
-        var shortestDistance = Number.MAX_SAFE_INTEGER
-        for(var i = 0; i < this.graph.nodes.length; i++){
-            var node = this.graph.nodes[i]
+        let shortest = null;
+        let shortestDistance = Number.MAX_SAFE_INTEGER
+        for(let i = 0; i < this.graph.nodes.length; i++){
+            let node = this.graph.nodes[i]
             if (node.id == 2 && node.distance < shortestDistance){
                 shortest = node;
                 shortestDistance = node.distance
@@ -153,10 +153,10 @@ class Pather{
     }
 
     convertPathToListOfLists(path){
-        var result = []
-        for (var i = 0; i < path.length; i++){
+        let result = []
+        for (let i = 0; i < path.length; i++){
             data = path[i]
-            var data = [data.y, data.x]
+            let data = [data.y, data.x]
             result.push(data)
         }
         return result;
@@ -168,20 +168,20 @@ class Pather{
      */
     findShortestPaths(source){
         source.setDistance(0)
-        var unsettledNodes = []
-        var settledNodes = []
+        let unsettledNodes = []
+        let settledNodes = []
 
         unsettledNodes.push(source)
-        var a = 0
+        let a = 0
         while(unsettledNodes.length != 0){
             a++
-            var currentNode = this.getLowestDistanceNode(unsettledNodes)
+            let currentNode = this.getLowestDistanceNode(unsettledNodes)
             unsettledNodes.splice(unsettledNodes.indexOf(currentNode), 1)
             
-            for (var i = 0; i < currentNode.adjacentNodes.length; i++)
+            for (let i = 0; i < currentNode.adjacentNodes.length; i++)
             {
-                var adjacentNode = currentNode.adjacentNodes[i][0]
-                var edgeWeight = currentNode.adjacentNodes[i][1]
+                let adjacentNode = currentNode.adjacentNodes[i][0]
+                let edgeWeight = currentNode.adjacentNodes[i][1]
                 if (!settledNodes.includes(adjacentNode)){
                     this.calculateMinimumDistance(adjacentNode, edgeWeight, currentNode)
                     unsettledNodes.push(adjacentNode)
@@ -197,11 +197,11 @@ class Pather{
      * return the node in the list that is not settled with the shortest path
      */
     getLowestDistanceNode(unsettledNodes){
-        var lowest = null
-        var lowestDistance = Number.MAX_SAFE_INTEGER
-        for (var i = 0; i < unsettledNodes.length; i++)
+        let lowest = null
+        let lowestDistance = Number.MAX_SAFE_INTEGER
+        for (let i = 0; i < unsettledNodes.length; i++)
         {
-            var nodeDistance = unsettledNodes[i].distance
+            let nodeDistance = unsettledNodes[i].distance
             if (nodeDistance < lowestDistance)
             {
                 lowestDistance = nodeDistance
@@ -213,12 +213,12 @@ class Pather{
     }
 
     calculateMinimumDistance(evaluationNode, edgeWeight, sourceNode){
-        var sourceDistance = sourceNode.distance
+        let sourceDistance = sourceNode.distance
         if (sourceDistance + edgeWeight < evaluationNode.distance)
         {
             evaluationNode.setDistance(sourceDistance + edgeWeight)
-            var shortestPath = []
-            for (var i = 0; i < sourceNode.shortestPath.length; i++){
+            let shortestPath = []
+            for (let i = 0; i < sourceNode.shortestPath.length; i++){
                 shortestPath.push(sourceNode.shortestPath[i])
             }
             shortestPath.push(sourceNode)
@@ -262,8 +262,8 @@ class Graph{
      * to run another pathing check, run this first
      */
     wipeAllPathData(){
-        for(var i = 0; i < this.nodes.length; i++){
-            var node = this.nodes[i]
+        for(let i = 0; i < this.nodes.length; i++){
+            let node = this.nodes[i]
             node.setShortestPath(node)
             node.distance = Number.MAX_SAFE_INTEGER
         }
@@ -273,8 +273,8 @@ class Graph{
      * searches and returns for a node with given x y coordinates
      */
     getNode(x, y){
-        for(var i = 0; i < this.nodes.length; i++){
-            var node = this.nodes[i]
+        for(let i = 0; i < this.nodes.length; i++){
+            let node = this.nodes[i]
             if (node.x == x && node.y == y){
                 return node;
             }
