@@ -37,4 +37,4 @@ export default class Spawner{
     }
 }
 
-export { Spawner };
+//export { Spawner };

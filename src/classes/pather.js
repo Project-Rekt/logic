@@ -286,4 +286,4 @@ class Graph{
     }
 }
 
-export { Pather };
+//export { Pather };

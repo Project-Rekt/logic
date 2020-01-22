@@ -18,4 +18,4 @@ export default function radius(entities, tower) {
     return array;
 }
 
-export { radius };
+//export { radius };

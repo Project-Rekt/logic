@@ -2,7 +2,7 @@
  * tests for the spawner object
  */
 
-import { Spawner } from './src/classes/spawner';
+import Spawner from './src/classes/spawner';
 class SpawnerTester {
     constructor(){
 

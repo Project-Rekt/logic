@@ -32,4 +32,4 @@ export default class Tower {
     }
 }
 
-export { Tower };
+//export { Tower };

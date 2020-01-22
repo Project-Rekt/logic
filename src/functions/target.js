@@ -44,4 +44,4 @@ export default function target(entities, targetingMode) {
     return target;
 }
 
-export { target };
+//export { target };

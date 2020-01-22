@@ -19,4 +19,4 @@ export default class Player {
     }
 }
 
-export { Player };
+//export { Player };

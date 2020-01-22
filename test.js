@@ -17,6 +17,3 @@ glob.sync('./*Tests.js').forEach(function (file) {
 
 //console.log(objects);
 
-let user = new objects.Player(100);
-
-console.log(user.currency);
