@@ -20,8 +20,11 @@ export default class Spawner{
     spawnMobs(deltaTime){
         this.startTime += deltaTime
         while (this.mobs.length > 0 && this.mobs[0][0] <= this.startTime){
-            let toSpawn = this.mobs.shift()[1]
-            this.spawn(toSpawn)
+            let toSpawn = this.mobs[0]
+            //console.log(toSpawn)
+            this.mobs.shift()
+            //console.log(this.mobs)
+            //this.spawn(toSpawn)
         }
     }
 
@@ -38,3 +41,10 @@ export default class Spawner{
 }
 
 //export { Spawner };
+/*
+s = new Spawner(0, 0)
+s.setMobs([[1, 1]])
+console.log(s.mobsRemaining())
+s.spawnMobs(10)
+console.log(s.mobsRemaining())
+*/
