@@ -1,5 +1,5 @@
 
-import { Monster } from './src/classes/monster'
+import Monster from './src/classes/monster'
 
 class MonsterTester{
     constructor(){
