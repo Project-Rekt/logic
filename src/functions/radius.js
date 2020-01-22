@@ -1,7 +1,7 @@
 //Entities is an array of all monster objects. Tower is 1 object.
 //Function to determine the set of monster objects within range of the tower.
 //Equation of a circle is (x-h)^2 + (y-k)^2 = r^2
-function radius(entities, tower) {
+export default function radius(entities, tower) {
     h = tower.positionX;
     k = tower.positionY;
     let array = [];
@@ -18,4 +18,4 @@ function radius(entities, tower) {
     return array;
 }
 
-export { radius };
+//export { radius };

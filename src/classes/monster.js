@@ -1,5 +1,5 @@
 //Class and Constructor to initiate monster object.
-class Monster {
+export default class Monster {
     constructor(hp, speed, def, distance, x, y) {
         this.hp = hp;
         this.speed = speed;
@@ -46,4 +46,4 @@ class Monster {
     }
 }
 
-export { Monster };
+//export { Monster };

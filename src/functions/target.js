@@ -1,6 +1,6 @@
 //Entities is an array of monster objects.
 //Function to calculate the best target given a set of monster objects and targeting mode.
-function target(entities, targetingMode) {
+export default function target(entities, targetingMode) {
     let target = entities[0];
 
     switch (targetingMode) {
@@ -44,4 +44,4 @@ function target(entities, targetingMode) {
     return target;
 }
 
-export { target };
+//export { target };

@@ -1,4 +1,4 @@
-class Spawner{
+export default class Spawner{
     constructor(x, y){
         this.x = x
         this.y = y
@@ -37,4 +37,4 @@ class Spawner{
     }
 }
 
-export { Spawner };
+//export { Spawner };

@@ -27,7 +27,7 @@
         p.initializeGraph(matrix)
         let path = p.findShortestPathToEnds(start[0], start[1])
  */
-class Pather{
+export default class Pather{
     constructor(){
         this.graph = null
         this.map = null
@@ -286,4 +286,4 @@ class Graph{
     }
 }
 
-export { Pather };
+//export { Pather };
