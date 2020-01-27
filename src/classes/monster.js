@@ -11,6 +11,7 @@ export default class Monster {
         this.path = []
         this.step = 0
         this.reachedGoal = false
+        this.dead = false
     }
 
     move(time){
@@ -41,9 +42,10 @@ export default class Monster {
         this.hp += heal;
     }
 
+    //position given in [y, x] format
     updatePosition(position) {
-        this.positionX = position[0];
-        this.positionY = position[1];
+        this.positionX = position[1];
+        this.positionY = position[0];
     }
 
     //Function to change distance.
@@ -63,14 +65,19 @@ export default class Monster {
     getDistance(){
         return this.distance
     }
+    //position given in [y, x] format
     getPosition(){
-        return [this.positionX, this.positionY]
+        return [this.positionY, this.positionX]
     }
     getPath(){
         return this.path
     }
     getStep(){
         return this.step
+    }
+    isDead(){
+        this.dead = this.hp <= 0
+        return this.dead
     }
     
 }
