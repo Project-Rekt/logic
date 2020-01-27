@@ -76,7 +76,7 @@ test('monsterTest3', () => {
 
 test('monsterTest4', () => {
     let monster = new Monster(0, 2, 3, 5, 6, 7); 
-    monster.updatePosition(10, 20)
+    monster.updatePosition([10, 20])
     let result = monster.getPosition()[0] == 10 && monster.getPosition()[1] == 20
     expect(result).toBe(true)
 })
