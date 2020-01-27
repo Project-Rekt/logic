@@ -4,7 +4,7 @@ import Monster from './src/classes/monster'
 test('monsterTest1', () => {
     let monster = new Monster(1, 2, 3, 5, 6, 7);  
     let result = monster.getHp() == 1 && monster.getSpeed() == 2 && monster.getDef() == 3
-    result = result && monster.getDistance() && monster.getPosition()[0] == 6 && monster.getPosition()[1] == 7
+    result = result && monster.getDistance() && monster.getPosition()[1] == 6 && monster.getPosition()[0] == 7
     expect(result).toBe(true)
 })
 

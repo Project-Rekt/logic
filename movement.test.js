@@ -28,7 +28,7 @@ test('moveTest3', () => {
     monster.setPath(path)
     monster.move(10)
     let output = monster.getPosition()
-    let expected = [1, 0]
+    let expected = [0, 1]
     let result = expected[0] == output[0] && expected[1] == output[1]
     expect(result).toBe(true)
 })
@@ -39,7 +39,7 @@ test('moveTest4', () => {
     monster.setPath(path)
     monster.move(.5)
     let output = monster.getPosition()
-    let expected = [.5, 0]
+    let expected = [0, .5]
     let result = expected[0] == output[0] && expected[1] == output[1]
     expect(result).toBe(true)
 })
@@ -50,7 +50,7 @@ test('moveTest5', () => {
     monster.setPath(path)
     monster.move(2)
     let output = monster.getPosition()
-    let expected = [2, 0]
+    let expected = [0, 2]
     let result = expected[0] == output[0] && expected[1] == output[1]
     expect(result).toBe(true)
 })
@@ -62,9 +62,9 @@ test('moveTest6', () => {
     monster.move(2)
     monster.move(2)
     let output = monster.getPosition()
-    let expected = [3, 0]
+    let expected = [0, 3]
     let result = expected[0] == output[0] && expected[1] == output[1]
-    console.log(output)
+    //console.log(output)
     expect(result).toBe(true)
 })
 
@@ -81,9 +81,9 @@ test('moveTest7', () => {
     monster.move(.5)
     monster.move(.5)
     let output = monster.getPosition()
-    let expected = [3, 0]
+    let expected = [0, 3]
     let result = expected[0] == output[0] && expected[1] == output[1]
-    console.log(output)
+    //console.log(output)
     expect(result).toBe(true)
 })
 
@@ -102,7 +102,7 @@ test('moveTest8', () => {
     let output = monster.getPosition()
     let expected = [0, 0]
     let result = expected[0] == output[0] && expected[1] == output[1]
-    console.log(output)
+    //console.log(output)
     expect(result).toBe(true)
 })
 
@@ -121,6 +121,6 @@ test('moveTest9', () => {
     let output = monster.getPosition()
     let expected = [0, 0]
     let result = expected[0] == output[0] && expected[1] == output[1]
-    console.log(output)
+    //console.log(output)
     expect(result).toBe(true)
 })

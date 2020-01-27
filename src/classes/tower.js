@@ -9,7 +9,17 @@ export default class Tower {
         this.range = range;
         this.positionX = x;
         this.positionY = y;
+        this.aimAngle = 0.0
     }
+
+
+    turnToTarget(target){
+        if (target == null || target.isDead()){
+            return
+        }
+        let targetPosition = target.getPosition()
+    }
+
 
     //Function to subtract health.
     takeDamage(damage) {
@@ -22,12 +32,12 @@ export default class Tower {
     }
 
     //Function to change targeting mode.
-    changeMode(targetingMode) {
+    setMode(targetingMode) {
         this.targetingMode = targetingMode;
     }
 
     //Function to change tower range.
-    changeRange(range) {
+    setRange(range) {
         this.range = range;
     }
 }
