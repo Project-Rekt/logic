@@ -1,5 +1,7 @@
+import Engine from 'engine';
+
 //Class and Constructor to initiate tower object.
-class Tower {
+class Tower extends Engine.Actor {
     constructor(hp, atkspeed, atk, def, targetingMode, range, x, y) {
         this.hp = hp;
         this.atkspeed = atkspeed;

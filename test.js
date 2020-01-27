@@ -1,6 +1,11 @@
 let glob = require('glob');
 let path = require('path');
 
+import Engine from 'engine';
+console.log("************");
+console.log(Engine.Actor);
+console.log("************");
+
 let objects = {};
 glob.sync('./src/**/*.js').forEach(function (file) {
     let item = require(path.resolve(file));

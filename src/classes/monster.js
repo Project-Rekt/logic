@@ -1,5 +1,7 @@
+import Engine from 'engine';
+
 //Class and Constructor to initiate monster object.
-class Monster {
+class Monster extends Engine.Actor {
     constructor(hp, speed, def, distance, x, y) {
         this.hp = hp;
         this.speed = speed;

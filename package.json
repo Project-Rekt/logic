@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Project-Rekt/logic#readme",
   "dependencies": {
+    "engine": "github:Project-Rekt/engine#dist",
     "glob": "^7.1.6"
   },
   "devDependencies": {
