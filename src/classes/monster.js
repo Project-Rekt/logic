@@ -1,7 +1,8 @@
 import Engine from 'engine';
 
 //Class and Constructor to initiate monster object.
-class Monster extends Engine.Actor {
+import moveOverPath from "../functions/movement"
+export default class Monster extends Engine.Actor {
     constructor(hp, speed, def, distance, x, y) {
         this.hp = hp;
         this.speed = speed;
@@ -9,6 +10,28 @@ class Monster extends Engine.Actor {
         this.distance = distance;
         this.positionX = x;
         this.positionY = y;
+        this.path = []
+        this.step = 0
+        this.reachedGoal = false
+        this.dead = false
+    }
+
+    move(time){
+        moveOverPath(this, time)
+    }
+
+    hasReachedGoal(){
+        this.reachedGoal = this.step + 1 >= this.path.length
+        return this.reachedGoal
+    }
+
+    setPath(path){
+        this.path = path
+        this.step = 0
+    }
+
+    setStep(step){
+        this.step = step
     }
 
     //Function to subtract health.
@@ -21,15 +44,44 @@ class Monster extends Engine.Actor {
         this.hp += heal;
     }
 
-    updatePosition(x, y) {
-        this.positionX = x;
-        this.positionY = y;
+    //position given in [y, x] format
+    updatePosition(position) {
+        this.positionX = position[1];
+        this.positionY = position[0];
     }
 
     //Function to change distance.
     updateDistance(distance) {
         this.distance = distance;
     }
+
+    getHp(){
+        return this.hp
+    }
+    getSpeed(){
+        return this.speed
+    }
+    getDef(){
+        return this.def
+    }
+    getDistance(){
+        return this.distance
+    }
+    //position given in [y, x] format
+    getPosition(){
+        return [this.positionY, this.positionX]
+    }
+    getPath(){
+        return this.path
+    }
+    getStep(){
+        return this.step
+    }
+    isDead(){
+        this.dead = this.hp <= 0
+        return this.dead
+    }
+    
 }
 
-export { Monster };
+//export { Monster };

@@ -1,6 +1,6 @@
-import { Tower } from './tower';
+import Tower from './tower';
 
-class TowerType1 extends Tower {
+export default class TowerType1 extends Tower {
     constructor(x, y) {
         this.hp = 100;
         this.atkspeed = 1;
@@ -14,4 +14,4 @@ class TowerType1 extends Tower {
     }
 }
 
-export { TowerType1 };
+//export { TowerType1 };

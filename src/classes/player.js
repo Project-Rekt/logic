@@ -1,5 +1,5 @@
 //Class and Constructor to initiate player object.
-class Player {
+export default class Player {
     constructor(currency) {
         this.currency = currency;
     }
@@ -13,6 +13,10 @@ class Player {
     spendMoney(money) {
         this.currency -= money;
     }
+
+    getMoney(){
+        return this.currency
+    }
 }
 
-export { Player };
+//export { Player };

@@ -1,7 +1,7 @@
-import { Player } from './player';
+import Player from './player';
 
 //Class and constructor to initiate shop object.
-class Shop extends Player {
+export default class Shop extends Player {
     constructor(towerArray) {
         this.selection = towerArray;
     }
@@ -25,4 +25,4 @@ class Shop extends Player {
     }
 }
 
-export { Shop };
+//export { Shop };
