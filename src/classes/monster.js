@@ -49,7 +49,7 @@ export default class Monster {
     }
 
     //Function to change distance.
-    updateDistance(distance) {
+    setDistance(distance) {
         this.distance = distance;
     }
 

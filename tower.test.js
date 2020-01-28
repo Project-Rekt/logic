@@ -59,3 +59,4 @@ test('towerTest4', () => {
     let result = expected == target(array, turret4.targetingMode)
     expect(result).toBe(true)
 })
+
