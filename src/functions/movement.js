@@ -20,6 +20,7 @@ export default function moveOverPath(mob, time){
         let newDistanceToTravel = distanceToTravel - maximumStepDistance
         let newTime = newDistanceToTravel / speed
         //console.log("time = " + newTime)
+        mob.setDistance(mob.getDistance() - maximumStepDistance)
         mob.setStep(mob.getStep() + 1)
         mob.updatePosition(targetPosition)
         moveOverPath(mob, newTime)
@@ -50,5 +51,6 @@ export default function moveOverPath(mob, time){
     
     let newPosition = [currentPosition[0] + yFactor, currentPosition[1] + xFactor]
     mob.updatePosition(newPosition)
+    mob.setDistance(mob.getDistance() - distanceToTravel)
     //mob.setStep(mob.getStep()+1)
 }
