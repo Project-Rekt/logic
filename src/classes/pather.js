@@ -182,7 +182,7 @@ export default class Pather{
             {
                 let adjacentNode = currentNode.adjacentNodes[i][0]
                 let edgeWeight = currentNode.adjacentNodes[i][1]
-                if (!settledNodes.includes(adjacentNode)){
+                if (!settledNodes.includes(adjacentNode) && !unsettledNodes.includes(adjacentNode)){
                     this.calculateMinimumDistance(adjacentNode, edgeWeight, currentNode)
                     unsettledNodes.push(adjacentNode)
 
