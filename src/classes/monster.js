@@ -1,10 +1,11 @@
 import Engine from 'engine';
-import moveOverPath from "../functions/movement"
+import moveOverPath from "../functions/movement";
+import edgePath from "../functions/edgePath";
 
 //Class and Constructor to initiate monster object.
 export default class Monster extends Engine.Actor {
-    constructor(hp, speed, def, distance, x, y) {
-        super({});
+    constructor(bounds, path, hp, speed, def, distance, x, y) {
+        super(bounds);
         this.hp = hp;
         this.speed = speed;
         this.def = def;
@@ -15,15 +16,50 @@ export default class Monster extends Engine.Actor {
         this.step = 0
         this.reachedGoal = false
         this.dead = false
+
+        this.speed = 5;
+        this.route = edgePath(path);
+        this.vertex = 0;
+
+        this.px = this.bounds.x;
+        this.px = this.bounds.y;
     }
 
-    render = (dt) => {
+    // Subject to change
+    // render = (dt) => {
+    //     //clearframe
+    //     this.ctx.fillStyle = "black";
+    //     this.ctx.fillRect(this.px, this.py, this.bounds.width, this.bounds.height);
 
-    }
+    //     this.px = Math.round(this.bounds.x);
+    //     this.py = Math.round(this.bounds.y);
 
-    update = (dt) => {
+    //     //drawframe
+    //     this.ctx.fillStyle = "pink";
+    //     this.ctx.fillRect(this.px, this.py, this.bounds.width, this.bounds.height);
+    // }
 
-    }
+    // update = (dt) => {
+    //     //update position
+    //     if (this.bounds.y < this.route[this.vertex][0] * 50) {
+    //         this.bounds.y += this.speed;
+    //     }
+    //     else if (this.bounds.x < this.route[this.vertex][1] * 50) {
+    //         this.bounds.x += this.speed;
+    //     }
+    //     else if (this.bounds.y == this.route[this.vertex][0] * 50 || this.bounds.x == this.route[this.vertex][1] * 50) {
+    //         if (this.vertex < this.route.length - 1) {
+    //             this.vertex += 1;
+    //         }
+    //         else {
+    //             this.destroy();
+    //         }
+    //     }
+    // }
+
+    // destroy = (dt) => {
+    //     this.stage.removeActor(this);
+    // }
 
     move(time) {
         moveOverPath(this, time)
