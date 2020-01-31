@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
+    "demo": "nodemon --exec babel-node demo/index.html",
     "test": "jest"
   },
   "repository": {

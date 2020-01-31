@@ -3,6 +3,7 @@ import Player from './player';
 //Class and constructor to initiate shop object.
 export default class Shop extends Player {
     constructor(towerArray) {
+        super({});
         this.selection = towerArray;
     }
 
@@ -24,5 +25,3 @@ export default class Shop extends Player {
         return this.selection[towerIndex].cost;
     }
 }
-
-//export { Shop };

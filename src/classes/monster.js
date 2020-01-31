@@ -1,9 +1,10 @@
 import Engine from 'engine';
+import moveOverPath from "../functions/movement"
 
 //Class and Constructor to initiate monster object.
-import moveOverPath from "../functions/movement"
 export default class Monster extends Engine.Actor {
     constructor(hp, speed, def, distance, x, y) {
+        super({});
         this.hp = hp;
         this.speed = speed;
         this.def = def;
@@ -16,21 +17,29 @@ export default class Monster extends Engine.Actor {
         this.dead = false
     }
 
-    move(time){
+    render = (dt) => {
+
+    }
+
+    update = (dt) => {
+
+    }
+
+    move(time) {
         moveOverPath(this, time)
     }
 
-    hasReachedGoal(){
+    hasReachedGoal() {
         this.reachedGoal = this.step + 1 >= this.path.length
         return this.reachedGoal
     }
 
-    setPath(path){
+    setPath(path) {
         this.path = path
         this.step = 0
     }
 
-    setStep(step){
+    setStep(step) {
         this.step = step
     }
 
@@ -55,33 +64,37 @@ export default class Monster extends Engine.Actor {
         this.distance = distance;
     }
 
-    getHp(){
+    getHp() {
         return this.hp
     }
-    getSpeed(){
+
+    getSpeed() {
         return this.speed
     }
-    getDef(){
+
+    getDef() {
         return this.def
     }
-    getDistance(){
+
+    getDistance() {
         return this.distance
     }
+
     //position given in [y, x] format
-    getPosition(){
+    getPosition() {
         return [this.positionY, this.positionX]
     }
-    getPath(){
+
+    getPath() {
         return this.path
     }
-    getStep(){
+
+    getStep() {
         return this.step
     }
-    isDead(){
+
+    isDead() {
         this.dead = this.hp <= 0
         return this.dead
     }
-    
 }
-
-//export { Monster };
