@@ -1,4 +1,4 @@
-import Player from './src/classes/player'
+import Player from '../src/classes/player'
 
 
 test('playerTest1', () => {

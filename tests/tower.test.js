@@ -1,8 +1,8 @@
 
-import Monster from './src/classes/monster'
-import Tower from './src/classes/tower'
-import radius from './src/functions/radius'
-import target from './src/functions/target'
+import Monster from '../src/classes/monster'
+import Tower from '../src/classes/tower'
+import radius from '../src/functions/radius'
+import target from '../src/functions/target'
 /*
  * Tests for the tower class. Note that after towers are changed, this will need to be rewritten
  */
