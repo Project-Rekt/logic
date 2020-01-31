@@ -60,7 +60,7 @@ export default class Monster extends Engine.Actor {
     }
 
     //Function to change distance.
-    updateDistance(distance) {
+    setDistance(distance) {
         this.distance = distance;
     }
 

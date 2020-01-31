@@ -1,11 +1,27 @@
+import sumPath from '../functions/sumPath'
+import Pather from './pather'
 export default class Spawner{
-    constructor(x, y){
+    constructor(y, x){
         this.x = x
         this.y = y
         this.path = null
         this.mobs = null
         this.startTime = 0.0
+        this.totalDistance = 0
     }
+
+    findPath(){
+        let map  = null //request map
+        let p = new Pather()
+        p.initializeGraph(map)
+        let path = p.findShortestPathToEnds(this.x, this.y)
+        if (path == null){
+            throw new Error("No path available")
+        }
+        this.totalDistance = sumPath(path)
+
+    }
+
 
     /*
      * takes a list of lists where the inner list is
@@ -39,12 +55,3 @@ export default class Spawner{
         return this.mobs.length
     }
 }
-
-//export { Spawner };
-/*
-s = new Spawner(0, 0)
-s.setMobs([[1, 1]])
-console.log(s.mobsRemaining())
-s.spawnMobs(10)
-console.log(s.mobsRemaining())
-*/
