@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
+    "demo": "nodemon --exec babel-node demo/index.html",
     "test": "jest"
   },
   "repository": {
@@ -19,12 +20,13 @@
   },
   "homepage": "https://github.com/Project-Rekt/logic#readme",
   "dependencies": {
+    "engine": "github:Project-Rekt/engine#dist",
     "glob": "^7.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/node": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2"
   }

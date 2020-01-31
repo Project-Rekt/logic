@@ -1,4 +1,4 @@
-import sumPath from './src/functions/sumPath'
+import sumPath from '../src/functions/sumPath'
 import { TestScheduler } from 'jest'
 
 test('sumPathTest1', () =>{

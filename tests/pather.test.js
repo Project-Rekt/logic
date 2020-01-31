@@ -2,7 +2,7 @@
  * tests that its own test method pathsEqual gives expected output
  * tests Pathing module and prints out results of tests
  */
-import Pather from './src/classes/pather'; 
+import Pather from '../src/classes/pather'; 
 
 function pathsEqual(p1, p2){
     if (p1.length != p2.length){

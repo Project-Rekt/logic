@@ -1,7 +1,11 @@
+import Engine from 'engine';
+import moveOverPath from "../functions/movement";
+import edgePath from "../functions/edgePath";
+
 //Class and Constructor to initiate monster object.
-import moveOverPath from "../functions/movement"
-export default class Monster {
-    constructor(hp, speed, def, distance, x, y) {
+export default class Monster extends Engine.Actor {
+    constructor(bounds, path, hp, speed, def, distance, x, y) {
+        super(bounds);
         this.hp = hp;
         this.speed = speed;
         this.def = def;
@@ -12,23 +16,66 @@ export default class Monster {
         this.step = 0
         this.reachedGoal = false
         this.dead = false
+
+        this.speed = 5;
+        this.route = edgePath(path);
+        this.vertex = 0;
+
+        this.px = this.bounds.x;
+        this.px = this.bounds.y;
     }
 
-    move(time){
+    // Subject to change
+    // render = (dt) => {
+    //     //clearframe
+    //     this.ctx.fillStyle = "black";
+    //     this.ctx.fillRect(this.px, this.py, this.bounds.width, this.bounds.height);
+
+    //     this.px = Math.round(this.bounds.x);
+    //     this.py = Math.round(this.bounds.y);
+
+    //     //drawframe
+    //     this.ctx.fillStyle = "pink";
+    //     this.ctx.fillRect(this.px, this.py, this.bounds.width, this.bounds.height);
+    // }
+
+    // update = (dt) => {
+    //     //update position
+    //     if (this.bounds.y < this.route[this.vertex][0] * 50) {
+    //         this.bounds.y += this.speed;
+    //     }
+    //     else if (this.bounds.x < this.route[this.vertex][1] * 50) {
+    //         this.bounds.x += this.speed;
+    //     }
+    //     else if (this.bounds.y == this.route[this.vertex][0] * 50 || this.bounds.x == this.route[this.vertex][1] * 50) {
+    //         if (this.vertex < this.route.length - 1) {
+    //             this.vertex += 1;
+    //         }
+    //         else {
+    //             this.destroy();
+    //         }
+    //     }
+    // }
+
+    // destroy = (dt) => {
+    //     this.stage.removeActor(this);
+    // }
+
+    move(time) {
         moveOverPath(this, time)
     }
 
-    hasReachedGoal(){
+    hasReachedGoal() {
         this.reachedGoal = this.step + 1 >= this.path.length
         return this.reachedGoal
     }
 
-    setPath(path){
+    setPath(path) {
         this.path = path
         this.step = 0
     }
 
-    setStep(step){
+    setStep(step) {
         this.step = step
     }
 
@@ -53,33 +100,37 @@ export default class Monster {
         this.distance = distance;
     }
 
-    getHp(){
+    getHp() {
         return this.hp
     }
-    getSpeed(){
+
+    getSpeed() {
         return this.speed
     }
-    getDef(){
+
+    getDef() {
         return this.def
     }
-    getDistance(){
+
+    getDistance() {
         return this.distance
     }
+
     //position given in [y, x] format
-    getPosition(){
+    getPosition() {
         return [this.positionY, this.positionX]
     }
-    getPath(){
+
+    getPath() {
         return this.path
     }
-    getStep(){
+
+    getStep() {
         return this.step
     }
-    isDead(){
+
+    isDead() {
         this.dead = this.hp <= 0
         return this.dead
     }
-    
 }
-
-//export { Monster };

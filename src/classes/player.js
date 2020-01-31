@@ -1,5 +1,7 @@
+import Engine from 'engine';
+
 //Class and Constructor to initiate player object.
-export default class Player {
+export default class Player extends Engine.Actor {
     constructor(currency) {
         this.currency = currency;
     }
@@ -14,9 +16,7 @@ export default class Player {
         this.currency -= money;
     }
 
-    getMoney(){
+    getMoney() {
         return this.currency
     }
 }
-
-//export { Player };

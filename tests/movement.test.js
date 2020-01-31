@@ -1,4 +1,4 @@
-import Monster from "./src/classes/monster"
+import Monster from "../src/classes/monster"
 
 test('moveTest1', () => {
     let monster = new Monster(1, 1, 1, 1, 0, 0);  

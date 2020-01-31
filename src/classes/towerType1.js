@@ -2,6 +2,7 @@ import Tower from './tower';
 
 export default class TowerType1 extends Tower {
     constructor(x, y) {
+        super({});
         this.hp = 100;
         this.atkspeed = 1;
         this.atk = 5;
@@ -13,5 +14,3 @@ export default class TowerType1 extends Tower {
         this.cost = 150;
     }
 }
-
-//export { TowerType1 };
