@@ -19,21 +19,21 @@ export default class Tower extends Engine.Actor {
     }
 
     // Subject to change
-    render = (dt) => {
-        this.ctx.fillStyle = "white";
-        this.ctx.font = "20px Arial";
-        this.ctx.textAlign = "center";
-        this.ctx.fillText("T", this.positionX, this.positionY + 10);
+    // render = (dt) => {
+    //     this.ctx.fillStyle = "white";
+    //     this.ctx.font = "20px Arial";
+    //     this.ctx.textAlign = "center";
+    //     this.ctx.fillText("T", this.positionX, this.positionY + 10);
 
-        this.ctx.strokeStyle = "white";
-        this.ctx.beginPath();
-        this.ctx.arc(this.positionX, this.positionY, this.range * 50, 0, 2 * Math.PI);
-        this.ctx.stroke();
-    }
+    //     this.ctx.strokeStyle = "white";
+    //     this.ctx.beginPath();
+    //     this.ctx.arc(this.positionX, this.positionY, this.range * 50, 0, 2 * Math.PI);
+    //     this.ctx.stroke();
+    // }
 
-    update = (dt) => {
+    // update = (dt) => {
 
-    }
+    // }
 
     turnToTarget(target) {
         if (target == null || target.isDead()) {
